@@ -24,6 +24,11 @@ jobs:
         with:
           node-version: '18'
 
+      - name: Get username and password from GitHub
+        run: |
+          echo "Username: ${{ vars.USER_NAME }}"
+          echo "Password: ${{ secrets.PASSWORD }}"
+
       - name: Install dependencies
         run: npm install
 
