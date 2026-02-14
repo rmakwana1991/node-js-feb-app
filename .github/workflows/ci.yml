@@ -12,6 +12,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -26,9 +29,6 @@ jobs:
 
       - name: Run tests
         run: npm test
-
-      - name: List files
-        run: ls
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
